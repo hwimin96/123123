@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B0D10">
+<meta name="color-scheme" content="dark">
+<title>앱 설치하기</title>
+<style>
+:root{--bg:#0B0D10;--bg2:#12161b;--card:#171c22;--line:#242b34;--tx:#EEF2F6;--mut:#8b96a3;--acc:#C6FF3D;--acc-tx:#0B0D10}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.55}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}
+.wrap{max-width:520px;margin:0 auto;padding:calc(22px + env(safe-area-inset-top)) 18px 48px}
+.eyebrow{color:var(--acc);font-size:12px;letter-spacing:.14em;font-weight:700}
+h1{font-size:28px;letter-spacing:-.03em;margin:6px 0 8px}
+h1 em{font-style:normal;color:var(--acc)}
+.lead{color:var(--mut);margin:0 0 20px}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.tab{padding:12px 6px;border-radius:14px;background:var(--bg2);border:1px solid var(--line);color:var(--mut);font-size:13px;line-height:1.3;text-align:center}
+.tab b{display:block;font-size:15px;color:var(--tx)}
+.tab.on{border-color:var(--acc);background:rgba(198,255,61,.08)}
+.tab.on b{color:var(--acc)}
+.hint{color:var(--mut);font-size:13px;margin:0 0 10px}
+.track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:2px 0 6px}
+.track::-webkit-scrollbar{display:none}
+.step{flex:0 0 86%;scroll-snap-align:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 20px;display:grid;gap:10px;min-height:210px;align-content:start}
+.step .no{color:var(--acc);font-size:12px;font-weight:700;letter-spacing:.1em}
+.step .big{font-size:40px;line-height:1}
+.step h2{font-size:19px;margin:0;letter-spacing:-.02em}
+.step p{margin:0;color:var(--mut);font-size:14px}
+.step b{color:var(--tx)}
+.step.done{border-color:var(--acc)}
+.nav{display:flex;justify-content:space-between;align-items:center;margin:12px 0 4px}
+.nav button{padding:10px 16px;border-radius:12px;background:var(--bg2);border:1px solid var(--line)}
+.dots{display:flex;gap:6px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.dots i.on{background:var(--acc)}
+.copy{margin-top:6px;padding:10px 14px;border-radius:12px;background:var(--acc);color:var(--acc-tx);font-weight:700;justify-self:start;font-size:14px}
+.url{font-size:13px;color:var(--tx);word-break:break-all;background:var(--bg2);padding:8px 10px;border-radius:10px}
+h3.help{margin:30px 0 10px;font-size:18px}
+.faq{display:grid;gap:10px}
+.faq div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.faq b{display:block;margin-bottom:2px}
+.faq span{color:var(--mut);font-size:14px}
+.back{display:inline-block;margin-top:22px;color:var(--acc);text-decoration:none;font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">FUTSAL CLUB</div>
+  <h1>앱 <em>설치하기</em></h1>
+  <p class="lead">앱스토어에서 받지 않아도 돼요. 쓰는 브라우저에서 <b>홈 화면에 추가</b>하면 아이콘을 눌러 앱처럼 열려요.</p>
+
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-k="ios"><b>아이폰</b>사파리</button>
+    <button class="tab" data-k="sam"><b>갤럭시</b>삼성인터넷</button>
+    <button class="tab" data-k="chr"><b>안드로이드</b>크롬</button>
+  </div>
+  <p class="hint">옆으로 넘기거나 아래 <b>다음 ›</b>을 눌러도 돼요.</p>
+
+  <div class="track" id="track"></div>
+  <div class="nav"><button id="prev">‹ 이전</button><div class="dots" id="dots"></div><button id="next">다음 ›</button></div>
+
+  <h3 class="help">설치가 잘 안 되면</h3>
+  <div class="faq">
+    <div><b>💬 카톡에서 링크를 열었다면</b><span>카톡 안의 화면에서는 설치가 안 돼요. 오른쪽 위 메뉴에서 <b>다른 브라우저로 열기</b>를 누른 뒤 따라 해 주세요.</span></div>
+    <div><b>🔁 설치 메뉴가 안 보여요</b><span>이미 설치돼 있으면 메뉴가 안 나와요. 홈 화면이나 앱스 화면에서 아이콘을 찾아보세요.</span></div>
+    <div><b>🌐 브라우저마다 메뉴가 달라요</b><span>위에서 내가 쓰는 브라우저 탭을 골라 따라 해 주세요. 아이폰은 꼭 사파리에서 해야 해요.</span></div>
+    <div><b>🛡️ "안전하지 않은 앱" 경고가 떠요</b><span>갤럭시에서 플레이 스토어를 거치지 않은 앱이라 뜨는 안내예요. <b>세부정보 더보기 → 무시하고 설치하기</b>를 누르면 돼요.</span></div>
+  </div>
+  <p class="lead" style="margin-top:18px">설치했으면 이름과 숫자 4자리로 로그인하면 끝! 궁금한 건 운영진에게 물어봐 주세요 🙌</p>
+  <a class="back" href="index.html">← 앱으로 돌아가기</a>
+</div>
+
+<script>
+(function () {
+  var APP_URL = location.href.replace(/install\.html.*$/, '');
+  var copyStep = function (browser) {
+    return { e: '🌐', t: '<b>' + browser + '</b>을 열고 아래 주소로 접속합니다.', d: '<div class="url">' + APP_URL + '</div><button class="copy" data-copy>📋 주소 복사</button>' };
+  };
+  var DATA = {
+    ios: [
+      copyStep('사파리'),
+      { e: '⬆️', t: '주소표시줄의 <b>⋯</b> 아이콘을 누릅니다.', d: '주소창 오른쪽(또는 화면 아래)에 있어요. 예전 iOS라면 아래 공유 버튼을 바로 눌러도 돼요.' },
+      { e: '📤', t: '<b>공유</b>를 선택합니다.', d: '' },
+      { e: '➕', t: '<b>더 보기</b>를 선택합니다.', d: '아이콘 줄 맨 오른쪽에 있어요.' },
+      { e: '🏠', t: '<b>홈 화면에 추가</b>를 선택합니다.', d: '' },
+      { e: '✅', t: '오른쪽 위 <b>추가</b>를 선택합니다.', d: '"웹 앱으로 열기"는 켜 둔 그대로 두세요.' },
+      { e: '🎉', t: '끝!', d: '홈 화면에 생긴 아이콘으로 열면 돼요.', done: true }
+    ],
+    sam: [
+      copyStep('삼성인터넷'),
+      { e: '⬇️', t: '주소표시줄의 <b>설치(다운로드) 아이콘</b>을 누릅니다.', d: '주소창 오른쪽 끝에 있어요. 안 보이면 메뉴(≡) → <b>현재 페이지 추가</b> → <b>홈 화면</b>.' },
+      { e: '📲', t: '"앱스 화면에 이 웹페이지를 추가할까요?"에서 <b>추가</b>를 선택합니다.', d: '' },
+      { e: '⚠️', t: '경고가 뜨면 <b>세부정보 더보기</b>를 선택합니다.', d: '"안전하지 않은 앱" 안내는 플레이 스토어를 거치지 않아서 뜨는 거예요. 우리 클럽 앱이니 걱정하지 마세요.' },
+      { e: '✅', t: '<b>무시하고 설치하기</b>를 선택합니다.', d: '' },
+      { e: '🎉', t: '끝!', d: '홈 화면에 생긴 아이콘으로 열면 돼요.', done: true }
+    ],
+    chr: [
+      copyStep('Chrome'),
+      { e: '⋮', t: '주소표시줄 오른쪽 <b>⋮ 메뉴</b>를 누릅니다.', d: '' },
+      { e: '📲', t: '<b>설치 및 바로가기 만들기</b>를 선택합니다.', d: '' },
+      { e: '⬇️', t: '<b>설치</b>를 선택합니다.', d: '"바로가기 만들기"가 아니라 <b>설치</b>를 골라 주세요.' },
+      { e: '✅', t: '"앱 설치" 창에서 <b>설치</b>를 선택합니다.', d: '' },
+      { e: '🎉', t: '끝!', d: '홈 화면에 생긴 아이콘으로 열면 돼요.', done: true }
+    ]
+  };
+
+  var cur = 'ios', idx = 0;
+  var track = document.getElementById('track'), dots = document.getElementById('dots');
+
+  function build() {
+    var s = DATA[cur];
+    track.innerHTML = s.map(function (x, i) {
+      return '<div class="step' + (x.done ? ' done' : '') + '"><div class="no">STEP ' + String(i + 1).padStart(2, '0') + ' / ' + String(s.length).padStart(2, '0') + '</div><div class="big">' + x.e + '</div><h2>' + x.t + '</h2>' + (x.d ? '<p>' + x.d + '</p>' : '') + '</div>';
+    }).join('');
+    dots.innerHTML = s.map(function (_, i) { return '<i class="' + (i === 0 ? 'on' : '') + '"></i>'; }).join('');
+    idx = 0; track.scrollLeft = 0;
+  }
+  function go(i) {
+    var n = DATA[cur].length; idx = Math.max(0, Math.min(n - 1, i));
+    var el = track.children[idx];
+    track.scrollTo({ left: el.offsetLeft - (track.clientWidth - el.clientWidth) / 2, behavior: 'smooth' });
+  }
+  track.addEventListener('scroll', function () {
+    var c = track.scrollLeft + track.clientWidth / 2, best = 0, d = 1e9;
+    Array.prototype.forEach.call(track.children, function (el, i) {
+      var m = Math.abs(el.offsetLeft + el.clientWidth / 2 - c); if (m < d) { d = m; best = i; }
+    });
+    idx = best;
+    Array.prototype.forEach.call(dots.children, function (el, i) { el.className = i === best ? 'on' : ''; });
+  });
+  document.getElementById('prev').onclick = function () { go(idx - 1); };
+  document.getElementById('next').onclick = function () { go(idx + 1); };
+  document.getElementById('tabs').onclick = function (e) {
+    var b = e.target.closest('.tab'); if (!b) return;
+    cur = b.dataset.k;
+    Array.prototype.forEach.call(this.children, function (t) { t.classList.toggle('on', t === b); });
+    build();
+  };
+  track.addEventListener('click', function (e) {
+    if (!e.target.closest('[data-copy]')) return;
+    var done = function () { e.target.textContent = '✅ 복사했어요'; };
+    if (navigator.clipboard) navigator.clipboard.writeText(APP_URL).then(done, done); else done();
+  });
+
+  // UA로 기본 탭 추천
+  var ua = navigator.userAgent;
+  if (/SamsungBrowser/i.test(ua)) cur = 'sam';
+  else if (/Android/i.test(ua)) cur = 'chr';
+  Array.prototype.forEach.call(document.getElementById('tabs').children, function (t) { t.classList.toggle('on', t.dataset.k === cur); });
+  build();
+})();
+</script>
+</body>
+</html>

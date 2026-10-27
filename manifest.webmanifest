@@ -1,0 +1,17 @@
+{
+  "name": "풋살 클럽",
+  "short_name": "풋살",
+  "description": "풋살 클럽 참석 투표 · 일정 · 팀 편성 · 경기 타이머",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0B0D10",
+  "theme_color": "#0B0D10",
+  "lang": "ko",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
